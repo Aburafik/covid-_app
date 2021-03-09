@@ -24,55 +24,62 @@ class Instructions extends StatelessWidget {
             children: <Widget>[
               InstructionCard(
                 text1: 'Wash your hands frequently',
-                text2: 'Wash your hand often with soap and',
+                text2: 'Wash your hand often with\nsoap and',
                 text3: 'water for at least 20 seconds ',
                 image: 'images/covid19.jpeg',
                 colour: Color(0xff3b978e),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InstructionCard(
                 text1: 'Cover Coughs',
                 text2: 'While coughing or sneezing cover',
-                text3: 'your mouth and nose with handkerchief ',
+                text3: 'your mouth and nose with \nhandkerchief ',
                 image: 'images/covid19.jpeg',
                 colour: Color(0xffd84b6b),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InstructionCard(
                 text1: 'Avoid crowded places',
                 text2: 'Avoid large events mass',
                 text3: 'gatherings',
                 image: 'images/covid19.jpeg',
                 colour: Color(0xff3b978e),
-
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InstructionCard(
                 text1: 'Avoid touching everything',
                 text2: 'Avoid touching your eyes nose and',
                 text3: 'mouths if your hands aren\'t clean',
                 image: 'images/covid19.jpeg',
                 colour: Color(0xffd84b6b),
-
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InstructionCard(
                 text1: 'Use mask',
                 text2: 'Cover your nose and mouth with',
                 text3: 'disposable tissue or handkerchief',
                 image: 'images/covid19.jpeg',
                 colour: Color(0xff3b978e),
-
               ),
-          SizedBox(height: 10,),
-          InstructionCard(
-            text1: 'Avoid close contact',
-            text2: 'Avoid close contact(about 6 feet) with',
-            text3: 'anyone who is sick or has symptoms',
-            image: 'images/covid19.jpeg',
-            colour: Color(0xffd84b6b),
-
-          ), ],
+              SizedBox(
+                height: 10,
+              ),
+              InstructionCard(
+                text1: 'Avoid close contact',
+                text2: 'Avoid close contact(about 6 - \nfeet) with',
+                text3: 'anyone who is sick or has\n symptoms',
+                image: 'images/covid19.jpeg',
+                colour: Color(0xffd84b6b),
+              ),
+            ],
           ),
         ),
       ),
@@ -81,54 +88,55 @@ class Instructions extends StatelessWidget {
 }
 
 class InstructionCard extends StatelessWidget {
-  const InstructionCard({this.colour,this.text1,this.text2,this.text3, this.image});
+  const InstructionCard(
+      {this.colour, this.text1, this.text2, this.text3, this.image});
   final Color colour;
   final String text1;
   final String text2;
   final String text3;
-  final String  image;
+  final String image;
 
-@override
-Widget build(BuildContext context) {
-  return Container(
-    height: 100,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Row(
-      children: [
-        SizedBox(
-          width: 10,
-        ),
-        Container(
-          width: 100,
-          height: 90,
-          padding: EdgeInsets.all(10.0),
-          decoration: BoxDecoration(
-
-            borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(image),
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            width: 100,
+            height: 90,
+            padding: EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(image),
+              ),
             ),
           ),
-        ),
-        SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              text1,
-              style: TextStyle(fontWeight: FontWeight.bold,color: colour),
-            ),
-            SizedBox(height: 5),
-            Text(text2),
-            Text(text3)
-          ],
-        ),
-      ],
-    ),
-  );
-}}
+          SizedBox(width: 10),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                text1,
+                style: TextStyle(fontWeight: FontWeight.bold, color: colour),
+              ),
+              SizedBox(height: 5),
+              Text(text2),
+              Text(text3)
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
