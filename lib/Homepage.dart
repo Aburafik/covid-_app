@@ -1,8 +1,21 @@
+import 'package:covid_19_app/network/network_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'detailpage.dart';
 
-class Homepage extends StatelessWidget {
+
+class Homepage extends StatefulWidget {
+  @override
+  _HomepageState createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  @override
+  void initState() {
+    var data = Network ();
+    data.getData();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
